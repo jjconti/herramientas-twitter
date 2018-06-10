@@ -26,8 +26,7 @@ def to_dict(user):
     }
 
 
-def inspect(account):
-    print(account)
+def get_followers(account):
     followers = []
     page = api.GetFollowersPaged(screen_name=account, cursor=-1)
     followers.extend(page[2])
@@ -40,6 +39,12 @@ def inspect(account):
             continue
         followers.extend(page[2])
         print(len(followers))
+        return followers
+
+
+def inspect(account):
+    print(account)
+    followers = get_followers(account)
 
     followers_dicts = [to_dict(u) for u in followers]
     followers_string = json.dumps(followers_dicts)
