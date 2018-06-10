@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from login import consumer_key, consumer_secret, access_key, access_secret
 
 from TwitterSearch import *

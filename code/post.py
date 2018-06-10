@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import random
 
 from login import api
